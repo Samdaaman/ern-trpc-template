@@ -1,0 +1,21 @@
+name: cicd
+
+on:
+  push:
+    branches: [ "**" ]
+
+jobs:
+  build:
+    timeout-minutes: 20
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker images
+      run: docker compose build
+  lint:
+    timeout-minutes: 10
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run npm linting
+      run: npm ci && npm run lint

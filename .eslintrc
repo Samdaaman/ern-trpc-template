@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:@typescript-eslint/strict"
+  ],
+  "parserOptions": {
+    "project": true
+  },
+  "rules": {
+    "comma-dangle": [2, "always-multiline"], // sorry but this makes git-diffs very clean
+    "@typescript-eslint/no-non-null-assertion": "off"
+  }
+}
